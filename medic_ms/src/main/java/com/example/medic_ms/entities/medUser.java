@@ -5,18 +5,22 @@
 package com.example.medic_ms.entities;
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 /**
  *
  * @author PC
  */
 @Entity
+@EntityScan
+@Table(name = "medUser")
 public class medUser implements Serializable{
    @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String first_name;
     private String last_name;
@@ -29,10 +33,10 @@ public class medUser implements Serializable{
         this.e_mail = e_mail;
         this.password = password;
     }
-    public Long getId(){
+    public int getId(){
         return id;
     }
-    public void setId(Long id){
+    public void setId(int id){
         this.id = id;
     }
     public String getFirst(){

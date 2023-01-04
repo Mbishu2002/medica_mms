@@ -28,8 +28,8 @@ public class UserController {
           return userService.findAll();  
         }
     @PostMapping("/create")
-    public int addUser(medUser user){
-       return userService.addUser(user);
+    public Iterable<medUser>addUser(){
+       return userService.addUser();
     }
 //    @PutMapping("/update")
 //    public int updateUser(int id, user user){

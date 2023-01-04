@@ -8,7 +8,7 @@ import com.example.medic_ms.entities.medUser;
 import com.example.medic_ms.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
-import java.util.List;
+
 /**
  *
  * @author PC
@@ -22,10 +22,11 @@ public class UserServiceImpl implements UserService{
         //find user from dbmgt
         return userRepository.findAll();
     }
+    medUser user;
     @Override
-    public int addUser(medUser user){
+    public Iterable<medUser>addUser(){
         //add user function from databasemgt
-        return userRepository.save(user);
+        return userRepository.saveAll(user);
     }
     @Override
     public  Optional<medUser>findById(int id){

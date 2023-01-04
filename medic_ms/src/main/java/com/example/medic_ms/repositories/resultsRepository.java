@@ -5,16 +5,17 @@
 package com.example.medic_ms.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import com.example.medic_ms.entities.medUser;
+import com.example.medic_ms.entities.Result;
+import java.util.Optional;
 
 /**
  *
  * @author PC
  */
-@Repository("userRepository")
-public interface UserRepository extends CrudRepository<medUser, Integer> {
-
-    public Iterable<medUser> saveAll(medUser user);
-    
-    
+@Repository("resultsRepository")
+public interface resultsRepository extends CrudRepository<Result, Integer> {
+    public Iterable<Result> addRes(Result data);
+    @Override
+    public Iterable<Result> findAll();
+    public Optional<Result> findById(int id);
 }

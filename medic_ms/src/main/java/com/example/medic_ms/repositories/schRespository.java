@@ -5,16 +5,19 @@
 package com.example.medic_ms.repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import com.example.medic_ms.entities.medUser;
+import com.example.medic_ms.entities.schedules;
+import java.util.Optional;
+
 
 /**
  *
  * @author PC
  */
-@Repository("userRepository")
-public interface UserRepository extends CrudRepository<medUser, Integer> {
-
-    public Iterable<medUser> saveAll(medUser user);
-    
+@Repository("schRepository")
+public interface schRespository extends CrudRepository<schedules, Integer> {
+    public Iterable<schedules> saveAll(schedules data);
+//    @Override
+//    public Iterable<schedules> findAll();
+//    public Optional<schedules> findById(int id);
     
 }

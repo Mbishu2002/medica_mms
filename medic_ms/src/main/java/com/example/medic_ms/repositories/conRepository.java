@@ -3,18 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.example.medic_ms.repositories;
+
+import com.example.medic_ms.entities.consultation;
+import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import com.example.medic_ms.entities.medUser;
+
 
 /**
  *
  * @author PC
  */
-@Repository("userRepository")
-public interface UserRepository extends CrudRepository<medUser, Integer> {
-
-    public Iterable<medUser> saveAll(medUser user);
-    
+@Repository("conRepository")
+public interface conRepository extends CrudRepository<consultation, Integer>{
+    public Iterable<consultation> addCon(consultation data);
+    @Override
+    public Iterable<consultation> findAll();
+    public Optional<consultation> findById(int id);
     
 }
