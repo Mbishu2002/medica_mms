@@ -35,4 +35,4 @@ Medica simplifies healthcare processes through a user-friendly interface. It inc
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache-2.0](LICENSE).
